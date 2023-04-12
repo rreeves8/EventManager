@@ -1,8 +1,4 @@
 type Subscriber = (data: any) => void;
-type EventManager<EventName> = {
-	emitEvent: (eventName: EventName, data: any) => void;
-	addSubscriber: (subscriber: Subscriber) => void;
-};
 
 class EventSystem<T> {
 	listeners: Map<T, Array<Subscriber>>;
@@ -33,13 +29,16 @@ class EventSystem<T> {
 	}
 }
 
-export const CreateEventManager = <EventName,>() => {
+export type EventManager<EventName> = {
+	emitEvent: (eventName: EventName, data: any) => void;
+	addSubscriber: (subscriber: Subscriber) => void;
+};
+
+export const CreateEventManager = <EventName>() => {
 	const eventManager = new EventSystem<EventName>();
 
 	return {
-		emitEvent(eventName: EventName, data: any) {
-			eventManager.emit(eventName, data);
-		},
+		emitEvent: eventManager.emit,
 		addSubscriber(eventName: EventName, subscriber: Subscriber, validate?: any) {
 			const listener: Subscriber = validate
 				? (data: any) => {
