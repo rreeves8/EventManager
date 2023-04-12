@@ -14,7 +14,7 @@ const someProcessEvent = CreateEventManager<EventNames>();
 //or
 const { emitEvent, addSubscriber } = CreateEventManager<EventNames>();
 
-emitEvent.addSubscriber(
+addSubscriber(
   "DataDone",
   (data: ExampleData) => {
     //the subscriber
