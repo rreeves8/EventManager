@@ -7,7 +7,7 @@ import CreateEventManager from "@magnusreeves/event-manager";
 
 type EventNames = "DataDone" | "Error";
 type ExampleData = {
-	name: string;
+  name: string;
 };
 
 const someProcessEvent = CreateEventManager<EventNames>();
@@ -15,19 +15,19 @@ const someProcessEvent = CreateEventManager<EventNames>();
 const { emitEvent, addSubscriber } = CreateEventManager<EventNames>();
 
 emitEvent.addSubscriber(
-	"DataDone",
-	(data: ExampleData) => {
-		//the subscriber
-		//do something with the data
-	},
-	(data: ExampleData) => {
-		//the validator, optional
-		//validate the data, throw an error if bad
-	}
+  "DataDone",
+  (data: ExampleData) => {
+    //the subscriber
+    //do something with the data
+  },
+  (data: ExampleData) => {
+    //the validator, optional
+    //validate the data, throw an error if bad
+  }
 );
 
 emitEvent("DataDone", {
-	name: "magnus",
+  name: "magnus",
 });
 
 ```
