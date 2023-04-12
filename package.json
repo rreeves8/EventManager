@@ -1,6 +1,6 @@
 {
   "name": "@magnusreeves/event-manager",
-  "version": "1.2.0",
+  "version": "1.4.0",
   "description": "A react libary for emitting and subscribing to events across components",
   "main": "EventManager.js",
   "scripts": {
