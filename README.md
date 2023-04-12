@@ -1,4 +1,4 @@
-#Event manager
+# Event manager
 
 An event manager with data validation and event name type checking
 
