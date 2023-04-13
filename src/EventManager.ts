@@ -38,7 +38,9 @@ export const CreateEventManager = <EventName>() => {
 	const eventManager = new EventSystem<EventName>();
 
 	return {
-		emitEvent: eventManager.emit,
+		emitEvent(eventName: EventName, data: any) {
+			eventManager.emit(eventName, data);
+		},
 		addSubscriber(eventName: EventName, subscriber: Subscriber, validate?: any) {
 			const listener: Subscriber = validate
 				? (data: any) => {

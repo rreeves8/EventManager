@@ -1,23 +1,23 @@
 {
-  "name": "@magnusreeves/event-manager",
-  "version": "1.5.0",
-  "description": "A libary for emitting and subscribing to events",
-  "main": "EventManager.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rreeves8/ReactEventManager.git"
-  },
-  "author": "Magnus Reeves",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rreeves8/ReactEventManager/issues"
-  },
-  "homepage": "https://github.com/rreeves8/ReactEventManager#readme",
-  "dependencies": {
-    "typescript": "^5.0.4"
-  }
+	"name": "@magnusreeves/event-manager",
+	"version": "1.5.2",
+	"description": "A libary for emitting and subscribing to events",
+	"main": "lib/EventManager.js",
+	"scripts": {
+		"test": "node test/test.js",
+		"build": "tsc"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rreeves8/ReactEventManager.git"
+	},
+	"author": "Magnus Reeves",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/rreeves8/ReactEventManager/issues"
+	},
+	"homepage": "https://github.com/rreeves8/ReactEventManager#readme",
+	"dependencies": {
+		"typescript": "^5.0.4"
+	}
 }
