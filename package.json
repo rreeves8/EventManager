@@ -1,6 +1,6 @@
 {
 	"name": "@magnusreeves/event-manager",
-	"version": "1.5.2",
+	"version": "2.0.0",
 	"description": "A libary for emitting and subscribing to events",
 	"main": "lib/EventManager.js",
 	"scripts": {
