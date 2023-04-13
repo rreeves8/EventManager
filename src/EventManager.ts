@@ -31,7 +31,7 @@ class EventSystem<T> {
 
 export type EventManager<EventName> = {
 	emitEvent: (eventName: EventName, data: any) => void;
-	addSubscriber: (subscriber: Subscriber) => void;
+	addSubscriber: (eventName: EventName, subscriber: Subscriber, validate?: any) => void;
 };
 
 export const CreateEventManager = <EventName>() => {
