@@ -3,7 +3,7 @@
 An event manager with data validation and event name type checking
 
 ```ts
-import CreateEventManager from "@magnusreeves/event-manager";
+import { CreateEventManager } from "@magnusreeves/event-manager";
 
 type EventNames = "DataDone" | "Error";
 type ExampleData = {
