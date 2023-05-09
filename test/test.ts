@@ -2,25 +2,23 @@ import { CreateEventManager } from "../lib/EventManager";
 
 type EventNames = "DataDone" | "Error";
 type ExampleData = {
-	name: string;
+  name: string;
 };
 
 const someProcessEvent = CreateEventManager<EventNames>();
 //or
-const { emitEvent, addSubscriber } = CreateEventManager<EventNames>();
+const { emitEvent, addListener, addValidator } =
+  CreateEventManager<EventNames>();
 
-addSubscriber(
-	"DataDone",
-	(data: ExampleData) => {
-		//the subscriber
-		//do something with the data
-	},
-	(data: ExampleData) => {
-		//the validator, optional
-		//validate the data, throw an error if bad
-	}
-);
+addListener("DataDone", (data: ExampleData) => {
+  //do something with the data
+});
+addValidator("DataDone", (data) => {
+  if (!("name" in data)) {
+    throw Error("bad data for event DataDone");
+  }
+});
 
 emitEvent("DataDone", {
-	name: "magnus",
+  name: "magnus",
 });

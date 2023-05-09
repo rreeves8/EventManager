@@ -1,16 +1,20 @@
 const { CreateEventManager } = require("../lib/EventManager");
 
-const { emitEvent, addSubscriber } = CreateEventManager();
+const someProcessEvent = CreateEventManager();
+//or
+const { emitEvent, addListener, addValidator } = CreateEventManager();
 
-addSubscriber(
-	"DataDone",
-	(data) => {
-		//the subscriber
-		//do something with the data
-		console.log(data);
-	}
-);
+addListener("DataDone", (data) => {
+  //do something with the data
+  console.log(data);
+});
+
+addValidator("DataDone", (data) => {
+  if (!("name" in data)) {
+    throw Error("bad data for event DataDone");
+  }
+});
 
 emitEvent("DataDone", {
-	name: "magnus",
+  name: "magnus",
 });
